@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getComputedStyle() method</title>
+    <style>
+        .message {
+            background-color: goldenrod;
+            padding: 5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 0 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="message" style="color:white">
+        The getComputedStyle() method returns an object that contains the computed style of an element.
+    </p>
+    <script>
+        const message = document.querySelector('.message');
+        // The getComputedStyle() is a method of the window object.
+        // The getComputedStyle() method returns an object that contains the computed style of an element.
+        // The computed style is the final style of an element after all the cascading and inheritance has been applied.
+        // It is read only property of the element.
+        const computedStyle = getComputedStyle(message);
+        console.log('Color:', computedStyle.color);
+        console.log('Background-color:', computedStyle.backgroundColor);
+        console.log('Font-size:', computedStyle.fontSize);
+        console.log('Padding:', computedStyle.padding);
+        console.log('Text-align:', computedStyle.textAlign);
+        console.log('Margin:', computedStyle.margin);
+    </script>
+
+</body>
+
+</html>

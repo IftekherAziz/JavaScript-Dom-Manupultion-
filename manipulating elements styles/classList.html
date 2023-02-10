@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript classList property</title>
+</head>
+<body>
+    <div id="content" class="main red">JavaScript classList</div>
+    <script>
+        // The classList is a read-only property of an element that returns a live collection of CSS classes:
+        // The classList property returns the class name(s) of an element, as a DOMTokenList object.
+        // We can modify it by using the add() and remove() methods.
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        const content = document.getElementById('content');
+
+        // To find a class name of an element, use the classList property - [ element.classList ]:
+        for (let cssClass of content.classList) {
+            console.log('Class name of div:', cssClass);
+            // Class name of div: main red
+        }
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        // To add one or more class name to an element, use the add() method - [ element.classList.add(className) ]:
+        // const content = document.getElementById('content');
+        content.classList.add('blue');
+        console.log('Added class in div:', content.classList);
+        // Output: Added class in div: DOMTokenList(3) ["main", "red", "blue", value: "main red blue"]
+
+        content.classList.add('green', 'yellow');
+        console.log('Added classes in div:', content.classList);
+        // Output: Added classes in div: DOMTokenList(5) ["main", "red", "blue", "green", "yellow", value: "main red blue green yellow"]
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        // To remove one or more class name from an element, use the remove() method - [ element.classList.remove(className) ]:
+        // const content = document.getElementById('content');
+        content.classList.remove('blue');
+        console.log('New classList from div:', content.classList);
+
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        // To replace one class name with another, use the replace() method - [ element.classList.replace(oldClassName, newClassName) ]:
+        // const content = document.getElementById('content');
+        content.classList.replace('yellow', 'orange');
+        console.log('Replaced class in div:', content.classList);
+        // Output: Replaced class in div: DOMTokenList(4) ["main", "red", "green", "orange", value: "main red green orange"]
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        // To check if an element has a specific class name, use the contains() method - [ element.classList.contains(className) ]:
+        // const content = document.getElementById('content');
+        console.log('Does div has class "red"?', content.classList.contains('red'));
+        // Output: Does div has class "red"? true
+
+        /* ------------------------------------------------------------------------------------------------- */
+
+        // To toggle a class name on an element, use the toggle() method - [ element.classList.toggle(className) ]:
+        // const content = document.getElementById('content');
+        content.classList.toggle('red');
+        console.log('Toggled class in div:', content.classList);
+    </script>
+</body>
+</html>

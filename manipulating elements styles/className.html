@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript className</title>
+</head>
+
+<body>
+    <section>
+        <ul id="menu" class="vertical main">
+            <li>Homepage</li>
+            <li>Services</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </section>
+    <script>
+        // To find a class name of an element, use the className property - [ element.className ]
+        // The className property returns the class name of an element.
+        // The className property is read only and it is a string.
+        const menu = document.getElementById('menu');
+        console.log('Class name of ul:', menu.className);
+        // Output: Class name of ul: vertical main
+
+        /* ------------------------------------------------------------------------------------- */
+
+        // To change the class name of an element, use the className property - [ element.className = 'newClassName' ]
+        menu.className = 'horizontal main';
+        console.log('New class name of ul:', menu.className);
+        // Output: New class name of ul: horizontal main
+
+        /* ------------------------------------------------------------------------------------- */
+
+        // To add a class name to an element, use the className property - [ element.className += ' newClassName' ]
+        menu.className += ' list-group-item';
+        console.log('Added class in ul:', menu.className);
+        // Output: Added class in ul: horizontal main list-group-item
+    </script>
+</body>
+</html>
