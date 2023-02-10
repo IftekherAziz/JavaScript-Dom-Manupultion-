@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript insertAdjacentHTML() method</title>
+</head>
+<body>
+    <ul id="list">
+        <li>CSS</li>
+    </ul>
+    <script>
+        // Fetch the list of items
+        const list = document.querySelector('#list');
+
+        // Simple JavaScript insertAdjacentHTML() Demo
+        
+        list.insertAdjacentHTML('beforebegin', '<h2>This is dynamic h2 tag</h2>');
+        list.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+        list.insertAdjacentHTML('beforeend', '<li>JavaScript</li>');
+        list.insertAdjacentHTML('afterend', '<h2>This is another dynamic h2 tag</h2>');
+    </script>
+</body>
+</html>

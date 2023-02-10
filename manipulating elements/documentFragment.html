@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentFragment interface</title>
+</head>
+<body>
+    <ul id="language">
+
+    </ul>
+    <script>
+        const languages = ['JS', 'Python', 'Java', 'C#', 'C++', 'PHP', 'Ruby'];
+
+        const languageList = document.getElementById('language');
+
+        // Create a document fragment
+        const fragment = document.createDocumentFragment();
+
+        // Create a list item for each language
+        languages.forEach(language => {
+            const li = document.createElement('li');
+            li.textContent = language;
+            fragment.appendChild(li);
+        });
+        languageList.appendChild(fragment);
+    </script>
+</body>
+</html>

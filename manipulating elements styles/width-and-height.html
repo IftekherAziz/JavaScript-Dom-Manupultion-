@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting the Width and Height of an Element</title>
+</head>
+
+<body>
+    <section>
+        <div class="box" style="width:100px;height:100px;border:solid 5px #000;padding:50px; background-color: burlywood;">Hello World</div>
+    </section>
+    <script>
+
+        const box = document.querySelector('.box');
+
+        // The width and height of an element can be found in different  ways: 
+
+        // 1 - offsetWidth & offsetHeight: 
+        let width = box.offsetWidth;
+        let height = box.offsetHeight;
+        console.log({ width, height });
+        // Output: {width: 120, height: 170}
+
+        /* ---------------------------------------------------------------- */
+
+        // 2 - clientWidth & clientHeight: 
+        const clientWidth = box.clientWidth;
+        const clientHeight = box.clientHeight;
+        console.log({ clientWidth, clientHeight });
+        // Output: {clientWidth: 100, clientHeight: 150}
+
+        /* ---------------------------------------------------------------- */
+
+        // 3 - scrollWidth & scrollHeight:
+        const scrollWidth = box.scrollWidth;
+        const scrollHeight = box.scrollHeight;
+        console.log({ scrollWidth, scrollHeight });
+        // Output: {scrollWidth: 100, scrollHeight: 150}
+
+        /* ---------------------------------------------------------------- */
+
+        // 4 - getComputedStyle:
+        const computedStyle = getComputedStyle(box);
+        const computedWidth = computedStyle.width;
+        const computedHeight = computedStyle.height;
+        console.log({ computedWidth, computedHeight });
+
+        /* ---------------------------------------------------------------- */
+
+        // 5 - getBoundingClientRect:
+        const rect = box.getBoundingClientRect();
+        const rectWidth = rect.width;
+        const rectHeight = rect.height;
+        console.log({ rectWidth, rectHeight });
+
+        /* ------------------------------------------------------------------ */
+
+        // 6 - getBoundingClientRect with scroll:
+        const rectWithScroll = box.getBoundingClientRect();
+        const rectWithScrollWidth = rectWithScroll.width;
+        const rectWithScrollHeight = rectWithScroll.height;
+        console.log({ rectWithScrollWidth, rectWithScrollHeight });
+
+        /* ------------------------------------------------------------------ */
+
+        
+        // To get the margin of an element, you use the getComputedStyle() method:
+        const margin = getComputedStyle(box).margin;
+        console.log({ margin });
+        // Output: {margin: "0px"}
+
+        /* ------------------------------------------------------------------ */
+
+        // To get the padding of an element, you use the getComputedStyle() method:
+        const padding = getComputedStyle(box).padding;
+        console.log({ padding });
+        // Output: {padding: "50px"}
+
+        /* ------------------------------------------------------------------ */
+
+        // To get the border of an element, you use the getComputedStyle() method:
+        const border = getComputedStyle(box).border;
+        console.log({ border });
+        // Output: {border: "5px solid rgb(0, 0, 0)"}
+
+        /* ------------------------------------------------------------------ */
+
+        // To get the border width of an element, you use the getComputedStyle() method:
+        const borderWidth = getComputedStyle(box).borderWidth;
+        console.log({ borderWidth });
+        // Output: {borderWidth: "5px"}
+
+        /* ------------------------------------------------------------------ */
+
+        // To get the border style of an element, you use the getComputedStyle() method:
+        const borderStyle = getComputedStyle(box).borderStyle;
+        console.log({ borderStyle });
+        // Output: {borderStyle: "solid"}
+
+        /* ------------------------------------------------------------------ */
+
+        // To get the border color of an element, you use the getComputedStyle() method:
+        const borderColor = getComputedStyle(box).borderColor;
+        console.log({ borderColor });
+        // Output: {borderColor: "rgb(0, 0, 0)"}
+
+        /* ------------------------------------------------------------------ */
+
+        // To get the border radius of an element, you use the getComputedStyle() method:
+        const borderRadius = getComputedStyle(box).borderRadius;
+        console.log({ borderRadius });
+        // Output: {borderRadius: "0px"}
+
+        /* ------------------------------------------------------------------ */
+
+        
+
+    </script>
+</body>
+
+</html>

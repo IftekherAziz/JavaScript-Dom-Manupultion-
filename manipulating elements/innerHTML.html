@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript innerHTML</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Services</li>
+    </ul>
+    <script>
+        // 1) Simple JavaScript innerHTML Demo
+        const menu = document.getElementById('menu');
+        console.log(menu.innerHTML);
+
+        // 2) Setting innerHTML for a node
+        // Create a new li element
+        let li = document.createElement('li');
+        li.innerHTML = 'About';
+        // Add the new li element to the menu
+        menu.appendChild(li);
+        console.log(menu.innerHTML);
+    </script>
+</body>
+</html>

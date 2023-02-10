@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript removeChild() method</title>
+</head>
+<body>
+    <h3>parentNode.removeChild(childNode)</h3>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li>FAQ</li>
+        <li>Contact</li>
+    </ul>
+    <script>
+        const menu = document.getElementById('menu');
+
+        // Remove the first list item
+        menu.removeChild(menu.firstElementChild);
+        // Remove the last list item
+        menu.removeChild(menu.lastElementChild);
+        // Remove the nth  list item
+        menu.removeChild(menu.children[1]);
+
+    </script>
+</body>
+</html>

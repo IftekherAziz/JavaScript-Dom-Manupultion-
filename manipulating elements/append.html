@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript append() method</title>
+</head>
+<body>
+    <ul id="app">
+        <li>Static Item</li>
+    </ul>
+    <script>
+        const app = document.getElementById('app');
+        const li = document.createElement('li');
+        li.textContent = 'New Item Added';
+        app.append(li);
+
+        // Alternative way:
+        const liItems = ['React', 'Svelte', 'Ember'];
+        liItems.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            app.append(li);
+        });
+    </script>
+</body>
+</html>

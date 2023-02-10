@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript after() method</title>
+</head>
+<body>
+    <h1>Javascript DOM - after()</h1>
+
+    <ul>
+        <li>Angular</li>
+        <li>VUE</li>
+    </ul>
+    <script>
+        // 1) Simple JavaScript after() Demo
+        const h1 = document.querySelector('h1');
+        const p = document.createElement('p');
+        p.textContent = 'This is a new paragraph';
+        h1.after(p);
+
+        // 2) Setting after() for a node
+        const h2 = document.createElement('h2');
+        h2.textContent = 'This is a new h2';
+        p.after(h2);
+
+        const list = document.querySelector('ul');
+        const liItems = ['React', 'Svelte', 'Ember'];
+        liItems.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            list.after(li);
+        });
+        list.lastChild.after('This is a new text node');
+    </script>
+</body>
+</html>

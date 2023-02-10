@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving a node within the document</title>
+</head>
+<body>
+    <ul id="first-list">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+    
+    <ul id="second-list">
+        <li>Four</li>
+        <li>Five</li>
+        <li>Six</li>
+    </ul>
+    
+    <script>
+        // Moving a node within the document:
+        // Get the ul#first-list:
+        const firstList = document.getElementById('first-list');
+        // Get the ul#second-list:
+        const secondList = document.getElementById('second-list');
+        // Get the first li element:
+        const firstListItem = firstList.firstElementChild;
+        // Move the first li element to the second ul:
+        secondList.appendChild(firstListItem);
+    </script>
+</body>
+</html>

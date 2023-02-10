@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent vs innerText</title>
+</head>
+<body>
+    <div id="note">
+        JavaScript textContent Demo!
+        <span style="display:none">Hidden Text!</span>
+        <!-- my comment -->
+    </div>
+    <script>
+        const note = document.getElementById('note');
+        // textContent returns the text content of a node and all its descendants
+        console.log(note.textContent);
+
+        // innerText returns the inner text content of a node and all its descendants which is human readable
+        console.log(note.innerText);
+
+        // Setting textContent for a node:
+        note.textContent = 'New Text Content!';
+    </script>
+</body>
+</html>
