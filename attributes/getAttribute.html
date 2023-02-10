@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript getAttribute() method</title>
+</head>
+
+<body>
+    <a href="https://iftekheraziz.github.io/" target="_blank" id="js">Iftekher Aziz</a>
+    <h1 style="color:chartreuse;" id="h1-tag" class="h1-class">This is a H1 Tag</h1>
+    <script>
+        // Get the value of the href attribute of the link:
+        const link = document.querySelector('#js');
+        console.log(link.getAttribute('href'));
+        // Output: https://iftekheraziz.github.io/
+
+        /* ------------------------------------------ */
+        
+        // Get all the attributes of the h1 tag:
+        const h1 = document.querySelector('h1');
+        // console.log(h1.getAttribute('style'));
+        // Output: color:chartreuse;
+
+        const h1Attributes = h1.attributes;
+        //console.log(h1Attributes);
+        // Output: NamedNodeMap {0: style, style: style, length: 1}
+
+        // Loop through the attributes:
+        for (let attribute of h1Attributes){
+            // console.log(attribute);
+            // Output:
+            // style
+            // color:chartreuse;
+            // length
+            // 1
+            console.log(`${attribute.name}: ${attribute.value}`);
+
+            // or::
+            //console.log(attribute.name);
+            //console.log(attribute.value);
+        }
+        /* getAttribute() – get the value of an attribute on an element */
+    </script>
+</body>
+
+</html>

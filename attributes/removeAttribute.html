@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript removeAttribute() method</title>
+</head>
+<body>
+    <a href="https://iftekheraziz.github.io/" target="_blank" id="js">Iftekher Aziz</a>
+
+    <script>
+        // Remove the target attribute of the link:
+        const link = document.querySelector('#js');
+        link.removeAttribute('target');
+        console.log(link.getAttribute('target'));
+        // Output: null
+
+        /* How it works: 
+        Select the link element with id js using the querySelector() method.
+        Remove the target attribute by calling the removeAttribute() on the selected link element. */
+    </script>
+</body>
+</html>
