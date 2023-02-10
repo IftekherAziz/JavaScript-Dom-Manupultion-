@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Get the Parent Element parentNode</title>
+</head>
+<body>
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+    <script>
+        // The node.parentNode returns the read-only parent node of a specified node or null if it does not exist.
+        let note = document.querySelector('.note');
+        console.log(note.parentNode);
+        /* How it works:
+        First, select the element with the .note class by using the querySelector() method.
+        Second, find the parent node of the element. */
+    </script>
+</body>
+</html>

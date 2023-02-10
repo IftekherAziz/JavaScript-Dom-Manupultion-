@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Child Elements of a Node in JavaScript</title>
+</head>
+<body>
+    <ul id="menu">
+        <li class="first">Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li class="last">About Us</li>
+    </ul>
+    <article id="content">
+        <h2>Heading</h2>
+        <p>First paragraph</p>
+    </article>
+    <script>
+        /* If the parentElement does not have any child element, the firstChild returns null. The firstChild property returns a child node which can be any node type such as an element node, a text node, or a comment node. The following script shows the first child of the #menu element: */
+        let content = document.getElementById('menu');
+        let firstChild = content.firstChild.nodeName;
+        console.log(firstChild);
+
+        /* ------------------------------------------- */
+
+        // Get the first child with the Element node only using the firstElementChild property: 
+        // First, select the #menu element by using the getElementById() method.
+        // Second, get the first child element by using the firstElementChild property.
+        let content1 = document.getElementById('menu');
+        console.log(content1.firstElementChild);
+        // Output: <li class="first">Home</li>
+
+        /* ------------------------------------------- */
+
+        // Get the last child with the Element node only using the lastElementChild property:
+        // First, select the #menu element by using the getElementById() method.
+        // Second, get the last child element by using the lastElementChild property.
+        let content2 = document.getElementById('menu');
+        console.log(content2.lastElementChild);
+        // Output: <li class="last">About Us</li>
+
+        /* ------------------------------------------- */
+
+        // Get all child elements of a node using the children property:
+        // First, select the #menu element by using the getElementById() method.
+        // Second, get all child elements by using the children property.
+        let allChild = document.getElementById('menu');
+        let children = menu.children;
+        console.log(allChild.children);
+        // Output: HTMLCollection(7) [li.first, li, li.current, li, li, li, li.last]
+    </script>
+</body>
+</html>

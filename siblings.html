@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavasScript Siblings - DOM</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+    <script>
+        // To get the previous siblings of an element, we will use the nextElementSibling attribute:
+        let current = document.querySelector('.current');
+        let nextSibling = current.nextElementSibling;
+        console.log('Next Sibling of Customer is:',nextSibling.innerText);
+        // Output: Careers
+
+        /* ------------------------------------------- */
+
+        //  To get To get all the next siblings of an element:
+        let current1 = document.querySelector('.current');
+        let nextSiblings = current1.nextElementSibling;
+        while(nextSiblings) {
+            console.log(nextSiblings.innerText);
+            nextSiblings = nextSiblings.nextElementSibling;
+        }
+        // Output: Careers >  Investors  > News > About Us
+
+        /* ------------------------------------------- */
+
+         // To get the previous siblings of an element, we will use the previousElementSibling attribute:
+            let previous = document.querySelector('.current');
+            let prevSibling = previous.previousElementSibling;
+            console.log('Prev Sibling of Customer is:', prevSibling.innerText);
+        // Output: Products
+
+        /* -------------------------------------------- */
+
+        // To get all the previous siblings of an element:
+        let allPrevious = document.querySelector('.current');
+        let prevSiblings = allPrevious.previousElementSibling;
+        while(prevSiblings) {
+            console.log(prevSiblings.innerText);
+            prevSiblings = prevSiblings.previousElementSibling;
+        }
+
+        /* ----------------------------------------------- */
+
+        // Get all siblings of an element:
+        let getSiblings = function (elem) {
+            // for collecting siblings
+            let siblings = [];
+            // if no parent, return no sibling
+            if (!elem.parentNode) {
+                return siblings;
+            }
+            // first child of the parent node
+            let sibling = elem.parentNode.firstChild;
+            // collecting siblings
+            while (sibling) {
+                if (sibling.nodeType === 1 && sibling !== elem) {
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+            return siblings;
+        };
+        let siblings = getSiblings(document.querySelector('.current'));
+        siblingText = siblings.map(function (sibling) {
+            return sibling.innerText;
+        });
+        console.log('Siblings of Customer Support are:', siblingText);
+        // Output: Siblings of Customer Support are: (6) ["Home", "Products", "Careers", "Investors", "News", "About Us"]
+    </script>
+</body>
+</html>
