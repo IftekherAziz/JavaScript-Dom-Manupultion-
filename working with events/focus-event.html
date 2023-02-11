@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Focus Events</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0db4f;
+            height: 50vh;
+            width: 100%;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <form id="form">
+            <input type="text" placeholder="username">
+            <input type="password" placeholder="password">
+        </form>
+    </div>
+    <script>
+        const pwd = document.querySelector('input[type="password"]');
+        pwd.addEventListener('focus', function(e) {
+            console.log('focused on password field');
+            e.target.style.backgroundColor = 'lightblue';
+        });
+
+        const usernameField = document.querySelector('input[type="text"]');
+        usernameField.addEventListener('blur', function(e) {
+           // console.log('focused on username field');
+            e.target.style.backgroundColor = 'green';
+        });
+    </script>
+</body>
+
+</html>

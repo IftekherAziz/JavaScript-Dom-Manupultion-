@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <style>
+        .container1, .container2 {
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            font-size: 1.5rem;
+        }
+        button {
+            padding: 20px 50px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <button id="btn">Click Me!</button>
+    </div>
+    <div class="container2">
+        <a href="https://www.javascripttutorial.net/">JS Tutorial</a>
+    </div>
+    <script>
+        // addEventListener()
+        const event = document.getElementById('btn');
+        event.addEventListener('click', function () {
+            // alert('I am clicked');
+            console.log('I am clicked');
+        });
+
+        // preventDefault()
+        const link = document.querySelector('a');
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log('Event Type:', e.type);
+        });
+
+        // stopPropagation()
+
+        btn.addEventListener('click', function (event) {
+                //console.log('The button was clicked!');
+                event.stopPropagation();
+            });
+
+    </script>
+</body>
+
+</html>

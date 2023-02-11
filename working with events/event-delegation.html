@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+    <ul id="menu">
+        <li><a id="home">Home</a></li>
+        <li><a id="dashboard">Dashboard</a></li>
+        <li><a id="report">Report</a></li>
+        <li id="aziz">Aziz</li>
+    </ul>
+    <script>
+        // let home = document.getElementById('home');
+        // home.addEventListener('home', (event) => {
+        //         console.log('Home menu item was clicked');
+        //     });
+
+        // let dashboard = document.getElementById('dashboard');
+        // dashboard.addEventListener('dashboard', (event) => {
+        //         console.log('Dashboard menu item was clicked');
+        //     });
+
+        // let report = document.getElementById('report');
+        // report.addEventListener('report', (event) => {
+        //         console.log('Report menu item was clicked');
+        //     });
+
+        /* In JavaScript, if you have a large number of event handlers on a page, these event handlers will directly impact the performance because of the following reasons:
+        First, each event handler is a function which is also an object that takes up memory. The more objects in the memory, the slower the performance.
+        Second, it takes time to assign all the event handlers, which causes a delay in the interactivity of the page.To solve this issue, you can leverage the event bubbling. */
+
+        /* let menu = document.getElementById('menu');
+        menu.addEventListener('click', (event) => {
+            if (event.target && event.target.nodeName == 'A') {
+                
+                
+                console.log(event.target.id + ' was clicked');
+            }
+ 
+            // console.log('event.target');
+            // console.log('event.target.nodeName');
+        }) */
+
+        document.getElementById('menu').addEventListener('click', (event) => {
+            if (event.target) {
+                console.log(event.target.id + ' was clicked');
+                console.log(event.target.id);
+                console.log(event.target.nodeName);
+            }
+        });  
+    </script>
+</body>
+</html>

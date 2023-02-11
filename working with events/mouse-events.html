@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Mouse Events</title>
+</head>
+
+<body>
+    <h3>Registering mouse event handlers</h3>
+    <button id="html-btn" onclick="console.log('Html button clicked')">Html Click Button!</button>
+    <button id="btn">Click Me!</button>
+
+    <!-- Getting Screen Coordinates -->
+    <h3>Getting Screen Coordinates</h3>
+    <div id="screen-coordinates" style="width: 400px; height: 300px; background-color: rgb(62, 153, 43);"></div>
+    <p id="log"></p>
+    <script>
+        // Method 1:
+        let btn = document.querySelector('#btn');
+
+        // btn.addEventListener('click', (event) => {
+        //     console.log('I am clicked');
+        // });
+
+        // Method 2:
+        btn.onclick = (event) => {
+            console.log('I am clicked');
+        };
+
+        // Getting Screen Coordinates
+        let screenCoordinates = document.querySelector('#screen-coordinates');
+        screenCoordinates.addEventListener('click', (event) => {
+            let x = event.screenX;
+            let y = event.screenY;
+            let log = document.querySelector('#log');
+            log.innerText = `X: ${x}, Y: ${y}`;
+            
+        });
+
+    </script>
+</body>
+
+</html>

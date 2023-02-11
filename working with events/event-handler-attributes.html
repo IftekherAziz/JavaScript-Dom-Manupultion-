@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Events in JavaScript</title>
+</head>
+
+<body>
+    <!-- Handle event by html onclick method -->
+    <input type="button" value="First Button" onclick="alert('Button is Clicked!')">
+
+    <!-- This event will be handle by a function -->
+    <input type="button" value="Second Button" onclick="showAlert()">
+
+    <input type="button" value="Submit 1" id="btn1">
+    <input type="button" value="Submit 2" id="btn2">
+    <script>
+        // 1 -  Handle event by onclick method:
+        function showAlert() {
+            //alert('Second Button is Clicked!');
+            console.log('Second Button is Clicked!');
+        }
+
+        // 1.1 - Handle event by onclick method:
+        let btn1 = document.querySelector('#btn1');
+
+        btn1.onclick = function () {
+            console.log('Submit 1 is Clicked!');
+            console.log(this.id);
+        };
+      
+        // 2 - Handle event by addEventListener method:
+        document.getElementById('btn2').addEventListener('click', function () {
+            console.log('Submit 2  Button is Clicked!');
+        });
+
+    </script>
+</body>
+
+</html>
